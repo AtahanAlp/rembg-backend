@@ -9,10 +9,10 @@ app = Flask(__name__)
 def upload_file():
     if request.method == 'POST':
         if 'file' not in request.files:
-            return 'No file uploaded', 400
+            return 'No file uploaded', 401
         file = request.files['file']
         if file.filename == '':
-            return 'No file selected', 400
+            return 'No file selected', 402
         if file:
             input_image = Image.open(file.stream)
             output_image = remove(input_image, post_process_mask=True)
