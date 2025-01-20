@@ -17,4 +17,5 @@ COPY . .
 
 EXPOSE 5100
 
-CMD ["python", "app.py"]
+# Use Gunicorn as the production server
+CMD ["gunicorn", "-b", "0.0.0.0:5100", "-w", "1", "app:app"]

@@ -1,3 +1,4 @@
 flask
 rembg[cpu]
 pillow
+gunicorn
